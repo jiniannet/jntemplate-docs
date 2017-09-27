@@ -1,7 +1,6 @@
 ---
-layout: en
+layout: jntemplate-en
 ---
-
 
 ### Syntax
 [^_^]:full Syntax: ${template} 
