@@ -1,5 +1,7 @@
 ﻿---
+
 layout: jntemplate-en
+
 ---
 
 # JNTemplate Syntax
