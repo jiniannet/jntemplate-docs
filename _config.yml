@@ -3,4 +3,5 @@ description:
 show_downloads: true
 baseurl: "/jntemplate/en/index.html" 
 url: "http://doc.jiniannet.com/"
+encoding: UTF-8
  
