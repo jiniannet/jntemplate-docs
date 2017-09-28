@@ -6,3 +6,23 @@ url: "http://doc.jiniannet.com/"
 encoding: UTF-8
 markdown: kramdown
 highlighter: rouge
+
+defaults:
+    -
+        scope:
+            path: "jntemplate/en/" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
