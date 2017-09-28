@@ -1,6 +1,10 @@
-﻿---
-layout: jntemplate-en
+﻿
 ---
+
+layout: jntemplate-en
+
+---
+
 
 # JNTemplate Syntax
 [^_^]:full Syntax: ${template} 
