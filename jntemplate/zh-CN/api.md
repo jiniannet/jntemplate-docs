@@ -1,29 +1,29 @@
----
+ï»¿---
 layout: jntemplate-zh-CN
 ---
 
 # JNTemplate Syntax
-JNTemplateµÄÓï·¨¿É·ÖÎªÍêÕû±êÇ©Óë¼òĞ´±êÇ©£¬ÍêÕû±êÇ©¸ñÊ½Îª£º${tagName} ¼òĞ´¸ñÊ½Îª£º$tagName£¬³ıÁËËãÊõ±í´ïÊ½±ØĞëÊ¹ÓÃÍêÕû±êÇ©Íâ£¬ÆäËü´ó²¿±êÇ©¶¼¿ÉÒÔ¼òĞ´¡£
-±¾Ä£°åÒıÇæµÄËùÓĞ¶ÔÏóÃû£¬·½·¨Ãû£¬ÊôĞÔÃû¾ù×ğÑ­ÒÔÏÂ¹æÔò£º¼´Ö»ÄÜÊ¹ÓÃ×ÖÄ¸£¬Êı×ÖÓë¡°_¡±µÄ×éºÏ£¬ÇÒ±ØĞëÒÔ×ÖÄ¸¿ªÍ·¡£
-¸ÃÎÄµµÊÊÓÃÓÚ°æ±¾1.3ÒÔÉÏ£¬1.2°æ±¾»ù±¾ÀàÍ¬¡£
+JNTemplateçš„è¯­æ³•å¯åˆ†ä¸ºå®Œæ•´æ ‡ç­¾ä¸ç®€å†™æ ‡ç­¾ï¼Œå®Œæ•´æ ‡ç­¾æ ¼å¼ä¸ºï¼š${tagName} ç®€å†™æ ¼å¼ä¸ºï¼š$tagNameï¼Œé™¤äº†ç®—æœ¯è¡¨è¾¾å¼å¿…é¡»ä½¿ç”¨å®Œæ•´æ ‡ç­¾å¤–ï¼Œå…¶å®ƒå¤§éƒ¨æ ‡ç­¾éƒ½å¯ä»¥ç®€å†™ã€‚
+æœ¬æ¨¡æ¿å¼•æ“çš„æ‰€æœ‰å¯¹è±¡åï¼Œæ–¹æ³•åï¼Œå±æ€§åå‡å°Šå¾ªä»¥ä¸‹è§„åˆ™ï¼šå³åªèƒ½ä½¿ç”¨å­—æ¯ï¼Œæ•°å­—ä¸â€œ_â€çš„ç»„åˆï¼Œä¸”å¿…é¡»ä»¥å­—æ¯å¼€å¤´ã€‚
+è¯¥æ–‡æ¡£é€‚ç”¨äºç‰ˆæœ¬1.3ä»¥ä¸Šï¼Œ1.2ç‰ˆæœ¬åŸºæœ¬ç±»åŒã€‚
 
-## ±äÁ¿:
+## å˜é‡:
 
->${title} »ò $title - ¼òµ¥±äÁ¿. Êä³ö±äÁ¿¡°title¡±µÄÖµ¡£
+>${title} æˆ– $title - ç®€å•å˜é‡. è¾“å‡ºå˜é‡â€œtitleâ€çš„å€¼ã€‚
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
 var templateContent = "hello,${title}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("title", "JNTemplate");
 var result = template.Render();
-//Êä³ö½á¹û£º "hello,JNTemplate"
+//è¾“å‡ºç»“æœï¼š "hello,JNTemplate"
 ```
 
-## ÊôĞÔ:
->${model.Name} »ò $model.Title - ¶ÔÏñÊôĞÔ.»ñÈ¡¶ÔÏó¡°model¡±µÄÊôĞÔ¡°¡±Öµ
+## å±æ€§:
+>${model.Name} æˆ– $model.Title - å¯¹åƒå±æ€§.è·å–å¯¹è±¡â€œmodelâ€çš„å±æ€§â€œâ€å€¼
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
 var templateContent = "hello,${model.Name}";
 var template = (Template)Engine.CreateTemplate(templateContent);
@@ -33,26 +33,26 @@ template.Set("model", new {
                 License="Apache License 2.0"
             });
 var result = template.Render();
-//Êä³ö½á¹û£º "hello,JNTemplate"
+//è¾“å‡ºç»“æœï¼š "hello,JNTemplate"
 ```
 
-## ËãÊõ±í´ïÊ½:
->${ expressions } -  Ö§³Ö¼Ó¼õ³Ë³ı¼°È¡ÓàµÈ(+,-,*,/,%)ÔËËã·û
+## ç®—æœ¯è¡¨è¾¾å¼:
+>${ expressions } -  æ”¯æŒåŠ å‡ä¹˜é™¤åŠå–ä½™ç­‰(+,-,*,/,%)è¿ç®—ç¬¦
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
 var templateContent = "(3+15)/2 = ${(3+15)/2}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
-//Êä³ö½á¹û£º "(3+15)/2 = 9"
+//è¾“å‡ºç»“æœï¼š "(3+15)/2 = 9"
 ```
 
-## ·½·¨
->${helper.query(parameter1,parameter2,...)} or $helper.query(parameter1,parameter2,...) - µ÷ÓÃ·½·¨£¬Ö§³Öµ÷ÓÃ¶ÔÏóÊµÀı·½·¨»òÕßFuncHandlerÎ¯ÍĞ£¨ÒıÇæÄÚÖÃ£©£¬µ«ÊÇÖ§³Ö¾²Ì¬·½·¨£¬ºÏÀíÊ¹ÓÃ¸Ã±êÇ©£¬¿ÉÒÔÊµÏÖ¾ø´ó²¿·Ö¹¦ÄÜ¡£
+## æ–¹æ³•
+>${helper.query(parameter1,parameter2,...)} or $helper.query(parameter1,parameter2,...) - è°ƒç”¨æ–¹æ³•ï¼Œæ”¯æŒè°ƒç”¨å¯¹è±¡å®ä¾‹æ–¹æ³•æˆ–è€…FuncHandlerå§”æ‰˜ï¼ˆå¼•æ“å†…ç½®ï¼‰ï¼Œä½†æ˜¯æ”¯æŒé™æ€æ–¹æ³•ï¼Œåˆç†ä½¿ç”¨è¯¥æ ‡ç­¾ï¼Œå¯ä»¥å®ç°ç»å¤§éƒ¨åˆ†åŠŸèƒ½ã€‚
 
-Ê¾Àı1£¨µ÷ÓÃÊµÀı·½·¨£©
+ç¤ºä¾‹1ï¼ˆè°ƒç”¨å®ä¾‹æ–¹æ³•ï¼‰
 
-HelperÀà´úÂë:
+Helperç±»ä»£ç :
 ```
 public class Helper
 {
@@ -63,7 +63,7 @@ public class Helper
 
 ```
 
-ºóÌ¨´úÂë:
+åå°ä»£ç :
 ```
 var templateContent = "$helper.Show(name,model.Url,\"Apache License 2.0\")";
 var template = (Template)Engine.CreateTemplate(templateContent);
@@ -73,22 +73,22 @@ template.Set("model", new {
 template.Set("name", "JNTemplate");
 var result = template.Render();
 
-//Êä³ö½á¹û£º "product name:JNTemplate,url:http://www.jiniannet.com,license:Apache License 2.0" 
+//è¾“å‡ºç»“æœï¼š "product name:JNTemplate,url:http://www.jiniannet.com,license:Apache License 2.0" 
 ```
 
-Ê¾Àı2£¨µ÷ÓÃDateTimeµÄToString¸ñÊ½»¯ÈÕÆÚ£©
+ç¤ºä¾‹2ï¼ˆè°ƒç”¨DateTimeçš„ToStringæ ¼å¼åŒ–æ—¥æœŸï¼‰
 
-ºóÌ¨´úÂë:
+åå°ä»£ç :
 ```
-var templateContent = "$now.ToString(\"yyyy-MM-dd\")";//µ±Ç°ÈÕÆÚÎª2017/09/09
+var templateContent = "$now.ToString(\"yyyy-MM-dd\")";//å½“å‰æ—¥æœŸä¸º2017/09/09
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("$now", DateTime.Now);
 var result = template.Render();
 
-//Êä³ö½á¹û£º "2017-09-09" 
+//è¾“å‡ºç»“æœï¼š "2017-09-09" 
 ```
 
-Ê¾Àı3£¨Î¯ÍĞ·½·¨£©
+ç¤ºä¾‹3ï¼ˆå§”æ‰˜æ–¹æ³•ï¼‰
 ```
 var templateContent = "$input(\"parameter1\",\"parameter2\")";
 var template = (Template)Engine.CreateTemplate(templateContent);
@@ -105,16 +105,16 @@ template.Set("input", new FuncHandler(args =>
 }));
 var result = template.Render();
 
-//Êä³ö½á¹û£º "your input:parameter1 parameter2"
+//è¾“å‡ºç»“æœï¼š "your input:parameter1 parameter2"
 ```
 
-## ¼ÓÔØÎÄ¼ş:
->${load("filename.html")} or $load("filename.html")-  ½«Ö¸¶¨ÎÄ¼şÃû¡°filename.html¡±°üº¬µ½µ±Ç°Ä£°åÖĞ£¬²¢Óëµ±Ç°Ä£°å¹²ÓÃÄ£°åÉÏÏÂÎÄ¼°Êı¾İ£¬Èç¹ûÎÄ¼şÔÚ´æÔÚJNTemplateÄ£°å±êÇ©£¬»á×Ô¶¯½øĞĞ½âÎö¡£¸Ã±êÇ©Ö§³Ö×ÓÄ¿Â¼£¬Â·¾¶·Ö¸ô·ûÎª²»¹ÜÊÇwindows»¹ÊÇlinuxxÍ³Ò»Îª¡°/¡±¡£
+## åŠ è½½æ–‡ä»¶:
+>${load("filename.html")} or $load("filename.html")-  å°†æŒ‡å®šæ–‡ä»¶åâ€œfilename.htmlâ€åŒ…å«åˆ°å½“å‰æ¨¡æ¿ä¸­ï¼Œå¹¶ä¸å½“å‰æ¨¡æ¿å…±ç”¨æ¨¡æ¿ä¸Šä¸‹æ–‡åŠæ•°æ®ï¼Œå¦‚æœæ–‡ä»¶åœ¨å­˜åœ¨JNTemplateæ¨¡æ¿æ ‡ç­¾ï¼Œä¼šè‡ªåŠ¨è¿›è¡Œè§£æã€‚è¯¥æ ‡ç­¾æ”¯æŒå­ç›®å½•ï¼Œè·¯å¾„åˆ†éš”ç¬¦ä¸ºä¸ç®¡æ˜¯windowsè¿˜æ˜¯linuxxç»Ÿä¸€ä¸ºâ€œ/â€ã€‚
 
-×¢Òâ£º¸Ã±êÇ©±ØĞëÎªÄ£°åÉÏÏÂÎÄÖ¸¶¨µ±Ç°Â·Ä¿Â¼ÊôĞÔ¡°CurrentPath¡±»òÕßÔÚÅäÖÃÏîÖĞÖ¸¶¨Ä£°å¹¤×÷Ä¿Â¼¡°ResourceDirectories¡±²ÅÄÜÕı³£Ê¹ÓÃ¡£Èç¹ûÊ¹ÓÃEngine.LoadTemplate´´½¨µÄÊµÀı £¬Ôò»á×Ô¶¯Ö¸¶¨µ±Ç°Ä¿Â¼¡£
+æ³¨æ„ï¼šè¯¥æ ‡ç­¾å¿…é¡»ä¸ºæ¨¡æ¿ä¸Šä¸‹æ–‡æŒ‡å®šå½“å‰è·¯ç›®å½•å±æ€§â€œCurrentPathâ€æˆ–è€…åœ¨é…ç½®é¡¹ä¸­æŒ‡å®šæ¨¡æ¿å·¥ä½œç›®å½•â€œResourceDirectoriesâ€æ‰èƒ½æ­£å¸¸ä½¿ç”¨ã€‚å¦‚æœä½¿ç”¨Engine.LoadTemplateåˆ›å»ºçš„å®ä¾‹ ï¼Œåˆ™ä¼šè‡ªåŠ¨æŒ‡å®šå½“å‰ç›®å½•ã€‚
 
-Ê¾Àı
-public/header.html´úÂë
+ç¤ºä¾‹
+public/header.htmlä»£ç 
 ```
 <nav>
   <ul>
@@ -123,7 +123,7 @@ public/header.html´úÂë
 </nav>
 ```
 
-index.html´úÂë
+index.htmlä»£ç 
 ```
 <!DOCTYPE html>
 <html>
@@ -138,7 +138,7 @@ index.html´úÂë
 
 ```
 
-C#´úÂë
+C#ä»£ç 
 ```
 var template = (Template)Engine.LoadTemplate("C:\\wwwwroot\index.html");
 template.Set("model", new {
@@ -148,7 +148,7 @@ template.Set("model", new {
 var result = template.Render
 ```
 
-Êä³ö½á¹û£º
+è¾“å‡ºç»“æœï¼š
 ```
 <!DOCTYPE html>
 <html>
@@ -169,37 +169,37 @@ var result = template.Render
 
  
  
-## °üº¬ÎÄ¼ş:
->${include("filename.html")} or include("filename.html")-  ÓÃ·¨¼°×¢ÒâÊÂÏîµÈÍ¬load£¬²»Í¬µÄÊÇ¸ÃÎÄ¼şÄÚÈç¹û´æÔÚÄ£°å±êÇ©²»»á½øĞĞ½âÎö£¬Ö»»á¼òµ¥µÄ½«ÄÚÈİ°üº¬½øÀ´¡£
+## åŒ…å«æ–‡ä»¶:
+>${include("filename.html")} or include("filename.html")-  ç”¨æ³•åŠæ³¨æ„äº‹é¡¹ç­‰åŒloadï¼Œä¸åŒçš„æ˜¯è¯¥æ–‡ä»¶å†…å¦‚æœå­˜åœ¨æ¨¡æ¿æ ‡ç­¾ä¸ä¼šè¿›è¡Œè§£æï¼Œåªä¼šç®€å•çš„å°†å†…å®¹åŒ…å«è¿›æ¥ã€‚
 
 
-## Âß¼­ÅĞ¶Ï:
->${ if(expressions1) }...code1..${elseif(expressions1)}...code2..{else}...code3..${end} -  Âß¼­ÅĞ¶Ï£¬Èç¹ûexpressions1³ÉÁ¢£¬³ÊÏÖcode1,Èç¹ûexpressions2³ÉÁ¢£¬Ôò³ÊÏÖcode2,¶¼²»³ÉÁ¢Ôò³ÊÏÖcode3.Ö§³ÖÒÔÏÂÔËËã·û£º||(Âß¼­»ò);&&(Âß¼­Óë);>(´óÓÚ);<£¨Ğ¡ÓÚ£©;>=£¨´óÓÚµÈÓÚ£©;<=£¨Ğ¡ÓÚµÈÓÚ£©;!=£¨²»µÈÓÚ£©==(µÈÓÚ)
+## é€»è¾‘åˆ¤æ–­:
+>${ if(expressions1) }...code1..${elseif(expressions1)}...code2..{else}...code3..${end} -  é€»è¾‘åˆ¤æ–­ï¼Œå¦‚æœexpressions1æˆç«‹ï¼Œå‘ˆç°code1,å¦‚æœexpressions2æˆç«‹ï¼Œåˆ™å‘ˆç°code2,éƒ½ä¸æˆç«‹åˆ™å‘ˆç°code3.æ”¯æŒä»¥ä¸‹è¿ç®—ç¬¦ï¼š||(é€»è¾‘æˆ–);&&(é€»è¾‘ä¸);>(å¤§äº);<ï¼ˆå°äºï¼‰;>=ï¼ˆå¤§äºç­‰äºï¼‰;<=ï¼ˆå°äºç­‰äºï¼‰;!=ï¼ˆä¸ç­‰äºï¼‰==(ç­‰äº)
 
-×¢Òâ£º±í´ïÊ½Èç¹û²»°üº¬Âß¼­ÔËËã·ûÊ±£¨Èç£ºif(id),if(true),if(150)£©£¬×ñÑ­¹æÔòÈçÏÂ£ºÈç¹û±í´ïÊ½Îª²¼¶ûÀàĞÍ (true/false)Ö±½ÓÈ¡Öµ£»Èç¹ûÎªÊı×Ö£¬Îª0Ê±±íÊ¾false£¬ÆäËüÎªtrue£»Èç¹ûÎª×Ö·û´®£¬Îª¿Õ»òÕßÎªnullÊ±Îªfalse£¬ÆäËüÎªtrue£»Èç¹ûÎªÆäËü¶ÔÏó£¬nullÎªfalse£¬ÆäËüÎªtrue¡£elseifÓëelseÃ»ÓĞÄÚÈİÊ±¿ÉÒÔÊ¡ÂÔ¡£¸Ã±êÇ©ÌåÄÚ´æÔÚÄÚÖÃ±äÁ¿foreachIndex£¬ÆğÊ¼ÖµÎª1£¨×¢Òâ£¬ÆğÊ¼ÖµÎª1£¬¶ø²»ÊÇÏñË÷ÒıÒ»Ñù´Ó0¿ªÊ¼£¬ÌØ±ğ×¢Òâ£©
+æ³¨æ„ï¼šè¡¨è¾¾å¼å¦‚æœä¸åŒ…å«é€»è¾‘è¿ç®—ç¬¦æ—¶ï¼ˆå¦‚ï¼šif(id),if(true),if(150)ï¼‰ï¼Œéµå¾ªè§„åˆ™å¦‚ä¸‹ï¼šå¦‚æœè¡¨è¾¾å¼ä¸ºå¸ƒå°”ç±»å‹ (true/false)ç›´æ¥å–å€¼ï¼›å¦‚æœä¸ºæ•°å­—ï¼Œä¸º0æ—¶è¡¨ç¤ºfalseï¼Œå…¶å®ƒä¸ºtrueï¼›å¦‚æœä¸ºå­—ç¬¦ä¸²ï¼Œä¸ºç©ºæˆ–è€…ä¸ºnullæ—¶ä¸ºfalseï¼Œå…¶å®ƒä¸ºtrueï¼›å¦‚æœä¸ºå…¶å®ƒå¯¹è±¡ï¼Œnullä¸ºfalseï¼Œå…¶å®ƒä¸ºtrueã€‚elseifä¸elseæ²¡æœ‰å†…å®¹æ—¶å¯ä»¥çœç•¥ã€‚è¯¥æ ‡ç­¾ä½“å†…å­˜åœ¨å†…ç½®å˜é‡foreachIndexï¼Œèµ·å§‹å€¼ä¸º1ï¼ˆæ³¨æ„ï¼Œèµ·å§‹å€¼ä¸º1ï¼Œè€Œä¸æ˜¯åƒç´¢å¼•ä¸€æ ·ä»0å¼€å§‹ï¼Œç‰¹åˆ«æ³¨æ„ï¼‰
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
-var templateContent = "${if((10%2)==0)} 10ÄÜ±»2Õû³ı ${else} 10²»ÄÜ2±»Õû³ı ${end}";
+var templateContent = "${if((10%2)==0)} 10èƒ½è¢«2æ•´é™¤ ${else} 10ä¸èƒ½2è¢«æ•´é™¤ ${end}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
-//Êä³ö½á¹û£º "10ÄÜ±»2Õû³ı"
+//è¾“å‡ºç»“æœï¼š "10èƒ½è¢«2æ•´é™¤"
 ```
 
-## Ñ­»·:
->${ foreach(itemName in list) }...${end} -  foreach±êÇ©ÓÃÓÚÑ­»··ÃÎÊ¼¯ºÏÒÔ»ñÈ¡ËùĞèĞÅÏ¢£¬Ê¹ÓÃ·½·¨ÓëÒªÇó¾ùÓëc#ÖĞµÄforeachÒ»ÖÂ£¬·²ÊÇËùÓĞÊµÏÖÁË System.Collections.IEnumerable½Ó¿ÚµÄ¶ÔÏó¶¼¿ÉÒÔ±éÀú£¬°üÀ¨Êı×é£¬List<T>£¬DataTable.RowsµÈ¡£itemNameÎªĞÂ´´½¨µÄ±äÁ¿£¬ÃüÃû¿É×Ô¶¨Òå¡££¨Ê¹ÓÃJSµÄÓÃ»§ĞèÒª×¢Òâforeach inÓëjsÖĞµÄfor inÊÇ²»Í¬µÄ£©
+## å¾ªç¯:
+>${ foreach(itemName in list) }...${end} -  foreachæ ‡ç­¾ç”¨äºå¾ªç¯è®¿é—®é›†åˆä»¥è·å–æ‰€éœ€ä¿¡æ¯ï¼Œä½¿ç”¨æ–¹æ³•ä¸è¦æ±‚å‡ä¸c#ä¸­çš„foreachä¸€è‡´ï¼Œå‡¡æ˜¯æ‰€æœ‰å®ç°äº† System.Collections.IEnumerableæ¥å£çš„å¯¹è±¡éƒ½å¯ä»¥éå†ï¼ŒåŒ…æ‹¬æ•°ç»„ï¼ŒList<T>ï¼ŒDataTable.Rowsç­‰ã€‚itemNameä¸ºæ–°åˆ›å»ºçš„å˜é‡ï¼Œå‘½åå¯è‡ªå®šä¹‰ã€‚ï¼ˆä½¿ç”¨JSçš„ç”¨æˆ·éœ€è¦æ³¨æ„foreach inä¸jsä¸­çš„for inæ˜¯ä¸åŒçš„ï¼‰
 
-×¢Òâ£º¸Ã±êÇ©ÌåÄÚ´æÔÚÄÚÖÃ±äÁ¿foreachIndex£¬ÆğÊ¼ÖµÎª1¡£
+æ³¨æ„ï¼šè¯¥æ ‡ç­¾ä½“å†…å­˜åœ¨å†…ç½®å˜é‡foreachIndexï¼Œèµ·å§‹å€¼ä¸º1ã€‚
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
 var templateContent = @"
 <ul>
 ${foreach(book in books)}
 	${if((foreachIndex%2)==0)}
-	<li>${foreachIndex}¡¢ ${book}</li>
+	<li>${foreachIndex}ã€ ${book}</li>
 	${else}
-	<li style=""background-color:#ccc"">${foreachIndex}¡¢ ${book}</li>
+	<li style=""background-color:#ccc"">${foreachIndex}ã€ ${book}</li>
 	${end}
 ${end}
 </ul>
@@ -214,25 +214,25 @@ template.Set("books", new string[]{
 var result = template.Render();
 ```
 
-Êä³ö½á¹û£º
+è¾“å‡ºç»“æœï¼š
 ```
 <ul>
-	<li style="background-color:#ccc">1¡¢ Tales of the City</li>
-	<li>2¡¢ The Serial</li>
-	<li style="background-color:#ccc">3¡¢ East of Eden</li>
-	<li>4¡¢ Island of the Blue Dolphins</li>
+	<li style="background-color:#ccc">1ã€ Tales of the City</li>
+	<li>2ã€ The Serial</li>
+	<li style="background-color:#ccc">3ã€ East of Eden</li>
+	<li>4ã€ Island of the Blue Dolphins</li>
 </ul>
 ```
 
-## ¸³Öµ:
->${ set(varName=itenValue)} -  ¸Ä±ä±äÁ¿µÄÖµ£¬²»´æÔÚÔò´´½¨
+## èµ‹å€¼:
+>${ set(varName=itenValue)} -  æ”¹å˜å˜é‡çš„å€¼ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»º
 
-×¢Òâ£º²»Ö§³ÖÎªÊôĞÔ¸³Öµ£¬Èç¹ûÔÚÑ­»·ÌåÄÚ£¨foreach£©Ê¹ÓÃ¸Ã±êÇ© £¬ĞèÒª×¢Òâ×÷ÓÃÓò£¬ÔÚÑ­»·Ìå´´½¨µÄ±äÁ¿£¬Àë¿ªÑ­»·ºó½«»á»ØÊÕ£¬Èç¹ûÊÇÔÚÑ­»·ÌåÄÚ¸Ä±äµÄ±äÁ¿£¬Ñ­»·½áÊøºóÒÀÈ»ÓĞĞ§£¨¼´±äÁ¿ÔÚÑ­»·Ç°ÒÑ¾­´æÔÚ£¬¸Ä±ä»á±£´æ£¬Èç¹ûÊÇÔÚÑ­»·ÖĞ´´½¨µÄ£¬Àë¿ªÑ­»·»áÊ§Ğ§£©¡£
+æ³¨æ„ï¼šä¸æ”¯æŒä¸ºå±æ€§èµ‹å€¼ï¼Œå¦‚æœåœ¨å¾ªç¯ä½“å†…ï¼ˆforeachï¼‰ä½¿ç”¨è¯¥æ ‡ç­¾ ï¼Œéœ€è¦æ³¨æ„ä½œç”¨åŸŸï¼Œåœ¨å¾ªç¯ä½“åˆ›å»ºçš„å˜é‡ï¼Œç¦»å¼€å¾ªç¯åå°†ä¼šå›æ”¶ï¼Œå¦‚æœæ˜¯åœ¨å¾ªç¯ä½“å†…æ”¹å˜çš„å˜é‡ï¼Œå¾ªç¯ç»“æŸåä¾ç„¶æœ‰æ•ˆï¼ˆå³å˜é‡åœ¨å¾ªç¯å‰å·²ç»å­˜åœ¨ï¼Œæ”¹å˜ä¼šä¿å­˜ï¼Œå¦‚æœæ˜¯åœ¨å¾ªç¯ä¸­åˆ›å»ºçš„ï¼Œç¦»å¼€å¾ªç¯ä¼šå¤±æ•ˆï¼‰ã€‚
 
-Ê¾Àı
+ç¤ºä¾‹
 ```
-var templateContent = "${set(value=(3+5)))}valueµÄÖµÊÇ${value}";
+var templateContent = "${set(value=(3+5)))}valueçš„å€¼æ˜¯${value}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
-//Êä³ö½á¹û£º "valueµÄÖµÊÇ8"
+//è¾“å‡ºç»“æœï¼š "valueçš„å€¼æ˜¯8"
 ```

@@ -1,6 +1,6 @@
----
+ï»¿---
 layout: jntemplate-zh-CN
 ---
-- Íø·½ÍøÖ·:[www.jiniannet.com](//www.jiniannet.com)
-- µç×ÓÓÊÏä:i@jiniannet.com
-- Q¡¡Q¡¡Èº:5089240
+- ç½‘æ–¹ç½‘å€:[www.jiniannet.com](//www.jiniannet.com)
+- ç”µå­é‚®ç®±:i@jiniannet.com
+- Qã€€Qã€€ç¾¤:5089240
