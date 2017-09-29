@@ -2,9 +2,25 @@
 layout: jntemplate-zh-CN
 ---
 
-# JNTemplate Syntax
-JNTemplate的语法可分为完整标签与简写标签，完整标签格式为：${tagName} 简写格式为：$tagName，除了算术表达式必须使用完整标签外，其它大部标签都可以简写。
-本模板引擎的所有对象名，方法名，属性名均尊循以下规则：即只能使用字母，数字与“_”的组合，且必须以字母开头。
+# 语法说明
+在介绍JNTemplate的语法时，我们会用到标签这个概念，在本文档中，标签指的是用来包含模板代码的语法块，在解析完成后，该语法块将会被替换成具体的数据。 
+JNTemplate标签根据写法可分为完整标签与简写标签二种：
+
+- 完整标签使用${做为标签开头并以}结尾，如：${tagName} 
+- 简写标签以$开头，以空白字符结尾，如：$tagName
+
+在通常情况下，绝大部分标签都可以使用简写标签，简写标签看起来会更加简洁。但是在以下情况下，标签不能简写：
+
+- 算术表达式必须使用完整标签
+- 标签结尾处是英文句号，英文或者数字时必须使用完整标签。如${siteUrl}.com 不能简写为$siteUrl.com
+
+根据类型大致又可以分为普通标签与块标签，块标签由多个普通标签组成：
+
+- 普通标签指一仅仅有一个标签组成的语法块，主要有变量，属性，方法，包含，赋值等标签。
+- 块标签有多个标签组成，通常使用${end}结尾。主要有循环，判断等标签
+
+在JNTemplate中，所有对象名，方法名，属性名均尊循以下规则：即只能使用字母，数字与下划线的组合，且必须以字母开头。
+
 该文档适用于版本1.3以上，1.2版本基本类同。
 
 ## 变量:
@@ -12,7 +28,7 @@ JNTemplate的语法可分为完整标签与简写标签，完整标签格式为�
 >${title} 或 $title - 简单变量. 输出变量“title”的值。
 
 示例
-```
+```c#
 var templateContent = "hello,${title}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("title", "JNTemplate");
@@ -24,7 +40,7 @@ var result = template.Render();
 >${model.Name} 或 $model.Title - 对像属性.获取对象“model”的属性“”值
 
 示例
-```
+```c#
 var templateContent = "hello,${model.Name}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("model", new {
@@ -40,7 +56,7 @@ var result = template.Render();
 >${ expressions } -  支持加减乘除及取余等(+,-,*,/,%)运算符
 
 示例
-```
+```c#
 var templateContent = "(3+15)/2 = ${(3+15)/2}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
@@ -53,7 +69,7 @@ var result = template.Render();
 示例1（调用实例方法）
 
 Helper类代码:
-```
+```c#
 public class Helper
 {
     public string Show(string name, string url,string license)
@@ -64,7 +80,7 @@ public class Helper
 ```
 
 后台代码:
-```
+```c#
 var templateContent = "$helper.Show(name,model.Url,\"Apache License 2.0\")";
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("model", new {
@@ -79,7 +95,7 @@ var result = template.Render();
 示例2（调用DateTime的ToString格式化日期）
 
 后台代码:
-```
+```c#
 var templateContent = "$now.ToString(\"yyyy-MM-dd\")";//当前日期为2017/09/09
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("$now", DateTime.Now);
@@ -89,7 +105,7 @@ var result = template.Render();
 ```
 
 示例3（委托方法）
-```
+```c#
 var templateContent = "$input(\"parameter1\",\"parameter2\")";
 var template = (Template)Engine.CreateTemplate(templateContent);
 template.Set("input", new FuncHandler(args =>
@@ -115,7 +131,7 @@ var result = template.Render();
 
 示例
 public/header.html代码
-```
+```html
 <nav>
   <ul>
       <li><a href="${model.SiteUrl}">${model.SiteTitle}</a></li>
@@ -124,7 +140,7 @@ public/header.html代码
 ```
 
 index.html代码
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -139,7 +155,7 @@ index.html代码
 ```
 
 C#代码
-```
+```c#
 var template = (Template)Engine.LoadTemplate("C:\\wwwwroot\index.html");
 template.Set("model", new {
                 model.SiteTitle="JNTemplate",
@@ -149,7 +165,7 @@ var result = template.Render
 ```
 
 输出结果：
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -179,7 +195,7 @@ var result = template.Render
 注意：表达式如果不包含逻辑运算符时（如：if(id),if(true),if(150)），遵循规则如下：如果表达式为布尔类型 (true/false)直接取值；如果为数字，为0时表示false，其它为true；如果为字符串，为空或者为null时为false，其它为true；如果为其它对象，null为false，其它为true。elseif与else没有内容时可以省略。该标签体内存在内置变量foreachIndex，起始值为1（注意，起始值为1，而不是像索引一样从0开始，特别注意）
 
 示例
-```
+```c#
 var templateContent = "${if((10%2)==0)} 10能被2整除 ${else} 10不能2被整除 ${end}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
@@ -192,7 +208,7 @@ var result = template.Render();
 注意：该标签体内存在内置变量foreachIndex，起始值为1。
 
 示例
-```
+```c#
 var templateContent = @"
 <ul>
 ${foreach(book in books)}
@@ -215,7 +231,7 @@ var result = template.Render();
 ```
 
 输出结果：
-```
+```html
 <ul>
 	<li style="background-color:#ccc">1、 Tales of the City</li>
 	<li>2、 The Serial</li>
@@ -230,7 +246,7 @@ var result = template.Render();
 注意：不支持为属性赋值，如果在循环体内（foreach）使用该标签 ，需要注意作用域，在循环体创建的变量，离开循环后将会回收，如果是在循环体内改变的变量，循环结束后依然有效（即变量在循环前已经存在，改变会保存，如果是在循环中创建的，离开循环会失效）。
 
 示例
-```
+```c#
 var templateContent = "${set(value=(3+5)))}value的值是${value}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
