@@ -16,8 +16,8 @@ JNTemplate标签根据写法可分为完整标签与简写标签二种：
 
 根据类型大致又可以分为普通标签与块标签，块标签由多个普通标签组成：
 
-- 普通标签指一仅仅有一个标签组成的语法块，主要有变量，属性，方法，包含，赋值等标签。
-- 块标签有多个标签组成，通常使用${end}结尾。主要有循环，判断等标签
+- 普通标签由一个标签组成，主要有变量，属性，方法，包含，赋值等标签。
+- 块标签由多个标签组成，通常使用${end}结尾。主要有循环，判断等标签。
 
 在JNTemplate中，所有对象名，方法名，属性名均尊循以下规则：即只能使用字母，数字与下划线的组合，且必须以字母开头。
 
@@ -37,7 +37,7 @@ var result = template.Render();
 ```
 
 ## 属性:
->${model.Name} 或 $model.Title - 对像属性.获取对象“model”的属性“”值
+>${model.Name} 或 $model.Title - 对像属性.获取对象“model”的属性“Title”值
 
 示例
 ```c#
@@ -64,7 +64,7 @@ var result = template.Render();
 ```
 
 ## 方法
->${helper.query(parameter1,parameter2,...)} or $helper.query(parameter1,parameter2,...) - 调用方法，支持调用对象实例方法或者FuncHandler委托（引擎内置），但是支持静态方法，合理使用该标签，可以实现绝大部分功能。
+>${helper.query(parameter1,parameter2,...)} or $helper.query(parameter1,parameter2,...) - 调用方法，支持调用对象实例方法或者FuncHandler委托（引擎内置），但是不支持静态方法。
 
 示例1（调用实例方法）
 
@@ -98,7 +98,7 @@ var result = template.Render();
 ```c#
 var templateContent = "$now.ToString(\"yyyy-MM-dd\")";//当前日期为2017/09/09
 var template = (Template)Engine.CreateTemplate(templateContent);
-template.Set("$now", DateTime.Now);
+template.Set("now", DateTime.Now);
 var result = template.Render();
 
 //输出结果： "2017-09-09" 
@@ -125,7 +125,7 @@ var result = template.Render();
 ```
 
 ## 加载文件:
->${load("filename.html")} or $load("filename.html")-  将指定文件名“filename.html”包含到当前模板中，并与当前模板共用模板上下文及数据，如果文件在存在JNTemplate模板标签，会自动进行解析。该标签支持子目录，路径分隔符为不管是windows还是linuxx统一为“/”。
+>${load("filename.html")} or $load("filename.html")-  将指定文件“filename.html”进行解析并加载到当前模板中,与当前模板共用模板上下文及数据。该标签支持子目录，路径分隔符为不管是windows还是linuxx统一使用“/”。
 
 注意：该标签必须为模板上下文指定当前路目录属性“CurrentPath”或者在配置项中指定模板工作目录“ResourceDirectories”才能正常使用。如果使用Engine.LoadTemplate创建的实例 ，则会自动指定当前目录。
 
@@ -190,13 +190,27 @@ var result = template.Render
 
 
 ## 逻辑判断:
->${ if(expressions1) }...code1..${elseif(expressions1)}...code2..{else}...code3..${end} -  逻辑判断，如果expressions1成立，呈现code1,如果expressions2成立，则呈现code2,都不成立则呈现code3.支持以下运算符：||(逻辑或);&&(逻辑与);>(大于);<（小于）;>=（大于等于）;<=（小于等于）;!=（不等于）==(等于)
+>${ if(expressions1) }...code1..${elseif(expressions1)}...code2..{else}...code3..${end} -  逻辑判断，如果expressions1成立，呈现code1,如果expressions2成立，则呈现code2,都不成立则呈现code3.支持以下运算符：&#124;&#124;(逻辑或);&&(逻辑与);&gt;(大于);&lt;（小于）;&gt;=（大于等于）;&lt;=（小于等于）;!=（不等于）==(等于)
 
-注意：表达式如果不包含逻辑运算符时（如：if(id),if(true),if(150)），遵循规则如下：如果表达式为布尔类型 (true/false)直接取值；如果为数字，为0时表示false，其它为true；如果为字符串，为空或者为null时为false，其它为true；如果为其它对象，null为false，其它为true。elseif与else没有内容时可以省略。该标签体内存在内置变量foreachIndex，起始值为1（注意，起始值为1，而不是像索引一样从0开始，特别注意）
+注意：表达式如果不包含逻辑运算符时（如：if(id),if(true),if(150)），遵循规则如下：
+
+- 布尔类型 (true/false)直接取值;
+- 为数字，0表示false，其它表示true;
+- 字符串，空或者为null表示false，其它表示true;
+- 对象，null表示false，其它表示true。
+
+如果需要判断对象是否为空，只需要简单$if(obj)即可。
+elseif与else没有内容时可以省略。
 
 示例
 ```c#
-var templateContent = "${if((10%2)==0)} 10能被2整除 ${else} 10不能2被整除 ${end}";
+var templateContent = 
+@"
+${if((10%2)==0)} 
+	10能被2整除 
+${else} 
+	10不能2被整除 
+${end}";
 var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
 //输出结果： "10能被2整除"
@@ -252,3 +266,5 @@ var template = (Template)Engine.CreateTemplate(templateContent);
 var result = template.Render();
 //输出结果： "value的值是8"
 ```
+
+其它更多详细用法，可以参考源我们的单元测试代码：JinianNet.JNTemplate.Test。
