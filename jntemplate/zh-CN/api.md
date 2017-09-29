@@ -1,5 +1,5 @@
 ---
-layout: jnt-zh
+layout: jnt-zh-page
 ---
 
 # 语法说明

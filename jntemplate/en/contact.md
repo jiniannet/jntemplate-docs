@@ -1,5 +1,5 @@
 ---
-layout: jntemplate-en
+layout: jnt-en-page
 ---
 
 - Site:[www.jiniannet.com](//www.jiniannet.com)
