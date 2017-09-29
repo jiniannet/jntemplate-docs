@@ -1,4 +1,4 @@
-﻿---
+---
 layout: jntemplate-en
 ---
 # JNTemplate 
