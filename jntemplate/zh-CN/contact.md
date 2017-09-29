@@ -1,5 +1,5 @@
 ---
-layout: jntemplate-zh-CN
+layout: jnt-zh-page
 ---
 - 网方网址:[www.jiniannet.com](//www.jiniannet.com)
 - 电子邮箱:i@jiniannet.com

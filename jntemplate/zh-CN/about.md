@@ -1,5 +1,5 @@
 ---
-layout: jntemplate-zh-CN
+layout: jnt-zh-page
 ---
 
 
