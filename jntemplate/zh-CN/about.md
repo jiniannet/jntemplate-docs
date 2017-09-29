@@ -1,4 +1,4 @@
-﻿---
+---
 layout: jntemplate-zh-CN
 ---
 

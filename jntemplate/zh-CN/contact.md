@@ -1,4 +1,4 @@
-﻿---
+---
 layout: jntemplate-zh-CN
 ---
 - 网方网址:[www.jiniannet.com](//www.jiniannet.com)
