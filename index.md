@@ -1,21 +1,14 @@
 ---
 layout: default
-title: jiniannet document
+title: jntemplate document
 ---
 
-### jntemplate
 <h1 align="center">
-	<img width="400" src="http://www.jiniannet.com/logo4.png" alt="Awesome">
-	<br>
-	<br>
+	<img width="200" src="http://www.jiniannet.com/logo4.png" alt="jntemplate">
 </h1>
-<br>
-<!--
+***
 <p align="center">
-	<b>✨ Prelaunching the <a href="https://awesomeweekly.co">Awesome Weekly</a> newsletter! ✨</b>
-	<b> Vote it up on <a href="https://www.producthunt.com/posts/awesome-weekly">Product Hunt</a></b>
-</p>
+		  <a href="/zh-CN/">简体中文</a>&nbsp;&nbsp;&nbsp;
+		  <a href="/en/">English</a>
 
-<br>
-- [中文手册](/jntemplate/zh-CN/index.html)
-- [English Document](/jntemplate/en/index.html)
+</p>
