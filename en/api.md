@@ -1,5 +1,5 @@
 ---
-layout: jnt-en-page
+layout: en-page
 ---
 
 # JNTemplate Syntax

@@ -1,4 +1,0 @@
----
-layout: jnt-en-page
----
-

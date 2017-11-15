@@ -1,5 +1,0 @@
----
-layout: jnt-zh-page
----
-
-

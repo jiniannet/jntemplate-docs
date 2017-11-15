@@ -1,5 +1,5 @@
 ---
-layout: jnt-en-home
+layout: en-home
 ---
 ### Features:
 - Easy to learn

@@ -1,5 +1,5 @@
 ---
-layout: jnt-zh-home
+layout: zh-home
 ---
 
 ### 特点:
