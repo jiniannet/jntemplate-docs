@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hello World | jntemplate</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="JNTemplate Documentation">
+    
+    <link rel="preload" href="/assets/css/0.styles.0ce4b5e8.css" as="style"><link rel="preload" href="/assets/js/app.28b3e942.js" as="script"><link rel="preload" href="/assets/js/2.7737ae14.js" as="script"><link rel="preload" href="/assets/js/13.8324cce2.js" as="script"><link rel="prefetch" href="/assets/js/10.8e31c830.js"><link rel="prefetch" href="/assets/js/11.a349333f.js"><link rel="prefetch" href="/assets/js/12.7d81cd23.js"><link rel="prefetch" href="/assets/js/14.43cc20ee.js"><link rel="prefetch" href="/assets/js/15.4f33786d.js"><link rel="prefetch" href="/assets/js/16.bc61885d.js"><link rel="prefetch" href="/assets/js/17.4275c6de.js"><link rel="prefetch" href="/assets/js/18.2af8be50.js"><link rel="prefetch" href="/assets/js/3.d521e884.js"><link rel="prefetch" href="/assets/js/4.93019857.js"><link rel="prefetch" href="/assets/js/5.689b3f01.js"><link rel="prefetch" href="/assets/js/6.125084f7.js"><link rel="prefetch" href="/assets/js/7.76a93a89.js"><link rel="prefetch" href="/assets/js/8.1170db41.js"><link rel="prefetch" href="/assets/js/9.e3dfe22e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0ce4b5e8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">jntemplate</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Getting Started</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/started/install.html" class="sidebar-link">Installation</a></li><li><a href="/started/quickstart.html" class="sidebar-link">Quick Start</a></li><li><a href="/started/hello.html" aria-current="page" class="active sidebar-link">Hello World</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/started/hello.html#create-an-application" class="sidebar-link">Create an application</a></li><li class="sidebar-sub-header"><a href="/started/hello.html#next-steps" class="sidebar-link">Next steps</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tag &amp; Syntax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Customization</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Guide</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="hello-world"><a href="#hello-world" class="header-anchor">#</a> Hello World</h1> <p>This article teaches you how to create and run a &quot;Hello World!&quot; .NET app.</p> <h2 id="create-an-application"><a href="#create-an-application" class="header-anchor">#</a> Create an application</h2> <p>First, download and install the .NET SDK on your computer.</p> <p>Next, open a terminal such as PowerShell, Command Prompt, or bash. Enter the following dotnet commands to create and run a C# application:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>dotnet new console --output sample
+<span class="token builtin class-name">cd</span> sample
+dotnet <span class="token function">add</span> package JinianNet.JNTemplate
+notepad Program.cs
+</code></pre></div><p>Open Program.cs：</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code><span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">JinianNet<span class="token punctuation">.</span>JNTemplate</span><span class="token punctuation">;</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">sample</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token class-name"><span class="token keyword">var</span></span> template <span class="token operator">=</span> Engine<span class="token punctuation">.</span><span class="token function">CreateTemplate</span><span class="token punctuation">(</span><span class="token string">&quot;Hello $name!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            template<span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;World&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            template<span class="token punctuation">.</span><span class="token function">Render</span><span class="token punctuation">(</span>Console<span class="token punctuation">.</span>Out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>Saves and Run:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>dotnet run
+</code></pre></div><p>Output：<code>Hello World!</code></p> <p>Congratulations! You've created a jntemplate application.</p> <h2 id="next-steps"><a href="#next-steps" class="header-anchor">#</a> Next steps</h2> <p>For more usage ，See <a href="/started/tags/tag.html">Tag &amp; Syntax</a> 。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/started/quickstart.html" class="prev">
+        Quick Start
+      </a></span> <span class="next"><a href="/tags/tag.html">
+        Overview
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.28b3e942.js" defer></script><script src="/assets/js/2.7737ae14.js" defer></script><script src="/assets/js/13.8324cce2.js" defer></script>
+  </body>
+</html>
