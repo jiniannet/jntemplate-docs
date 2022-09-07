@@ -1,54 +1,50 @@
-module.exports = {
-    title: 'jntemplate',
-    description: 'JNTemplate Documentation',
-    themeConfig: {
-        sidebar: [
-            {
-                title: "Getting Started",
+import { defaultTheme } from '@vuepress/theme-default'
+export default {
+    title:'jntemplate',
+    description: 'jntemplate is an  fast and lightweight html templating engine for C# .NET. text template engine.',
+  theme: defaultTheme({
+    //navbar
+    sidebar: [
+    {
+                text: "Getting Started",
                 children: [{
-                    title: "Installation",
-                    path: "/started/install.md"
+                    text: "Installation",
+                    link: "/started/install.html"
                 }, {
-                    title: "Quick Start",
-                    path: "/started/quickstart.md"
-                }, {
-                    title: "Hello World",
-                    path: "/started/hello.md"
+                    text: "Quick Start",
+                    link: "/started/quickstart.html"
                 }],
             },
             {
-                title: "Tag & Syntax",
+                text: "Syntax",
                 children: [{
-                    title: "Overview",
-                    path: "/tags/tag.md"
+                    text: "Overview",
+                    link: "/tags/tag.html"
                 }, {
-                    title: "Basis Tags",
-                    path: "/tags/basistag.md"
-                }, {
-                    title: "Complex Tags",
-                    path: "/tags/complextag.md"
+                    text: "Syntax",
+                    link: "/tags/syntax.html"
                 }],
             },
             {
-                title: "Customization",
+                text: "Customization",
                 children: [{
-                    title: "Configuration",
-                    path: "/customization/configuration.md"
+                    text: "Configuration",
+                    link: "/customization/configuration.html"
                 }],
             },
             {
-                title: "Guide",
+                text: "Guide",
                 children: [{
-                    title: "Change Log",
-                    path: "/guide/changelog.md"
+                    text: "Change Log",
+                    link: "/guide/changelog.html"
                 }, {
-                    title: "License",
-                    path: "/guide/license.md"
+                    text: "License",
+                    link: "/guide/license.html"
                 }, {
-                    title: "Contributing",
-                    path: "/guide/contributors.md"
+                    text: "Contributing",
+                    link: "/guide/contributors.html"
                 }],
             }
-        ]
-    }
+    ],
+  }),
 }

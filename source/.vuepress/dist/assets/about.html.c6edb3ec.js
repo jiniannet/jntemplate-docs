@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-1066ba73","path":"/started/about.html","title":"JNTemplate","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1617981414000,"contributors":[{"name":"\u7FC5\u8180\u7684\u521D\u8877","email":"hnvvv@163.com","commits":1}]},"filePathRelative":"started/about.md"}');export{t as data};
