@@ -1,6 +1,0 @@
-# JNTemplate
-***
-**About JNTemplate**
-
-
-

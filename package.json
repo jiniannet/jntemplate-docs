@@ -1,15 +1,16 @@
 {
-  "name": "docs",
+  "name": "jntemplate-docs-en",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "description": "English documentation for JNTemplate, an open-source ASP.NET template engine",
   "scripts": {
-    "docs:dev": "vuepress dev source",
-    "docs:build": "vuepress build source"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
-  "author": "",
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.51"
+    "vitepress": "2.0.0-alpha.21"
   }
 }

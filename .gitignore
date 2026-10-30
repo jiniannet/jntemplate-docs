@@ -1,3 +1,8 @@
-/node_modules/
-.temp
-.cache
+node_modules
+.vitepress/cache
+.vitepress/dist
+cache
+dist
+.DS_Store
+*.local
+npm-debug.log*
