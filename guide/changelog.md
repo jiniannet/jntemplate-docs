@@ -1,4 +1,15 @@
 # Changelog
+
+## Version 2.5.0
+***
+Release date: 2026-11-11
+ - Fixed the issue where the type conversion logic in the parsing mode differed from that in the compilation mode
+- Fixed the issue where DisableFileWatcher was ineffective
+- Other known issue fixes
+- Added .NET 11 support
+- Code optimization
+
+
 ## Version 2.4.4
 ***
 Release date: 2025-11-21
